@@ -1,0 +1,26 @@
+{
+	"name": "nomGo",
+	"author": "Alexander Falb",
+	"version": "0.0.1",
+	"license": "MIT",
+	"description": "a mongoDB browser",
+
+	"private": "true",
+
+	"scripts": {
+		"start": "node app"
+	},
+
+	"dependencies": {
+		"express": "3.x",
+		"jade": "0.x",
+		"stylus": "0.x",
+		"i18n": "0.x",
+		"mongoskin": "0.x"
+	},
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/elexx/CGMinerMonitorJS.git"
+	}
+}

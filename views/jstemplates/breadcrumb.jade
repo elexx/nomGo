@@ -1,0 +1,33 @@
+ul.breadcrumb
+
+	<% if(database) { %>
+	li
+		a(href='#') #{__('breadcrumb.home')}
+		span.divider /
+
+		<% if(collection) { %>
+		li
+			a(href='#') <%- database %>
+			span.divider /
+
+			<% if(document) { %>
+			li
+				a(href='#') <%- collection %>
+				span.divider /
+
+			li.active
+				<%- document %>
+
+			<% } else { %>
+			li.active
+				<%- collection %>
+			<% } %>
+
+		<% } else { %>
+		li.active
+			<%- database %>
+		<% } %>
+
+	<% } else { %>
+	li.active #{__('breadcrumb.home')}
+	<% } %>
