@@ -5,8 +5,6 @@
 	"license": "MIT",
 	"description": "a mongoDB browser",
 
-	"private": "true",
-
 	"scripts": {
 		"start": "node app"
 	},
