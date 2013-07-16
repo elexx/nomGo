@@ -2,17 +2,17 @@ ul.breadcrumb
 
 	<% if(database) { %>
 	li
-		a(href='#') #{__('breadcrumb.home')}
+		a(href='#').home #{__('breadcrumb.home')}
 		span.divider /
 
 		<% if(collection) { %>
 		li
-			a(href='#') <%- database %>
+			a(href='#').database <%- database %>
 			span.divider /
 
 			<% if(document) { %>
 			li
-				a(href='#') <%- collection %>
+				a(href='#').collection <%- collection %>
 				span.divider /
 
 			li.active

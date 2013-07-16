@@ -12,7 +12,7 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'app'], function($, _,
 			':database': 'listCollections',
 			':database/:collection': 'listDocuments',
 			':database/:collection/:document': 'displayDocument',
-			':database/:collection/_new': 'newDocument',
+			':database/:collection/new': 'newDocument',
 		}
 	});
 

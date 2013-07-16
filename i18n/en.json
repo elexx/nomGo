@@ -1,5 +1,7 @@
 {
 	"title.main": "nomGO - a mongoDB browser",
 	"brand": "nomGo",
-	"breadcrumb.home": "Home"
+	"breadcrumb.home": "Home",
+	"btn.view": "btn.view",
+	"btn.delete": "btn.delete"
 }
