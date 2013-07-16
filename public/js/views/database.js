@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'text!templates/database'], function($, _, Backbone, Marionette, app, databaseTemplate) {
+define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'text!templates/databaseList'], function($, _, Backbone, Marionette, app, databaseTemplate) {
 
 	var DatabaseView = Marionette.ItemView.extend({
 		tagName: 'tr',

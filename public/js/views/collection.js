@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'text!templates/collection'], function($, _, Backbone, Marionette, app, collectionTemplate) {
+define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'text!templates/collectionList'], function($, _, Backbone, Marionette, app, collectionTemplate) {
 
 	var CollectionView = Marionette.ItemView.extend({
 		tagName: 'tr',

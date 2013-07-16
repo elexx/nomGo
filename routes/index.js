@@ -8,7 +8,7 @@
 		var app = options.app;
 
 		setupStaticSites(app, ['/']);
-		setupJSTemplates(app, ['/breadcrumb', '/database', '/collection']);
+		setupJSTemplates(app, ['/breadcrumb', '/databaseList', '/collectionList', '/documentList']);
 		setupMongoConnector(app);
 	}
 

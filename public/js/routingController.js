@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'views/databases', 'collections/databases', 'views/collections', 'collections/collections'], function($, _, Backbone, Marionette, app, DatabaseListView, DatabaseList, CollectionListView, CollectionList) {
+define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'views/databases', 'collections/databases', 'views/collections', 'collections/collections', 'views/documents', 'collections/documents'], function($, _, Backbone, Marionette, app, DatabaseListView, DatabaseList, CollectionListView, CollectionList, DocumentListView, DocumentList) {
 
 	var RoutingController = Marionette.Controller.extend({
 		listDatabases: function() {
@@ -19,6 +19,10 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'views/database
 
 		listDocuments: function(database, collection) {
 			app.vent.trigger('show:listDocuments', { database: database, collection: collection });
+			app.mainRegion.show(new DocumentListView({
+				collection: new DocumentList([], { url: 'mongo/dbs/' + database + '/' + collection }),
+				baseUrl: '/' + database + '/' + collection
+			}));
 		},
 
 		displayDocument: function(database, collection, document) {
