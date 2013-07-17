@@ -16,7 +16,7 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'text!templates
 
 		deleteDocument: function(event) {
 			event.preventDefault();
-			console.log('Not yet implemented');
+			this.model.destroy();
 		}
 	});
 

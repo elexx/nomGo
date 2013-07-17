@@ -12,7 +12,7 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'views/database'], fun
 			};
 		},
 
-		onRender: function() {
+		onShow: function() {
 			this.collection.fetch();
 		}
 	});

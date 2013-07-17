@@ -3,5 +3,9 @@
 	"brand": "nomGo",
 	"breadcrumb.home": "Home",
 	"btn.view": "View",
-	"btn.delete": "Delete"
+	"btn.delete": "Delete",
+	"btn.save": "Save",
+	"alert.save_success": "Saved!",
+	"alert.save_error": "Server unreachable",
+	"alert.parse_error": "Parsing Error - Invalid JSON format"
 }

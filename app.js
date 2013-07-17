@@ -9,7 +9,8 @@ var app = express();
 i18n.configure({
 	locales:['en'],
 	defaultLocale: 'en',
-	directory: __dirname + '/i18n'
+	directory: __dirname + '/i18n',
+	updateFiles: false
 });
 
 app.configure(function () {

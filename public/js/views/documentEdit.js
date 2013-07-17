@@ -6,8 +6,11 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'models/documentEdit',
 		className: 'span12',
 
 		initialize: function() {
-			this.model.set('doc', {});
 			this.model.fetch();
+		},
+
+		events: {
+			'click .save': 'saveChanges'
 		},
 
 		modelEvents: {
@@ -15,15 +18,35 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'models/documentEdit',
 		},
 
 		onRender: function() {
-			if(typeof this.model.get('doc') !== {}) {
-				this.$el.find('textarea').each(function(index, element) {
-					var codeMirror = CodeMirror.fromTextArea(element, {
-						mode: 'application/json',
-						gutters: ['CodeMirror-lint-markers'],
-						lineNumbers: true,
-						lint: true
-					});
+			var $element = this.$el.find('#editor');
+
+			this.codemirror = CodeMirror.fromTextArea($element.get(0), {
+				mode: 'application/json',
+				lineNumbers: true,
+				lint: true
+			});
+
+			this.codemirror.getDoc().setValue(JSON.stringify(this.model.toJSON(), null, '  '));
+		},
+
+		saveChanges: function() {
+			$('.alert').hide();
+			try {
+				var value = JSON.parse(this.codemirror.getDoc().getValue(''));
+				this.model.save(value, {
+					success: function(model, response, options) {
+						$('.savesuccess').fadeIn();
+						console.log('saved');
+					},
+					error: function(model, xhr, options) {
+						$('.saveerror').fadeIn();
+						console.log('error');
+					}
 				});
+				console.log(value);
+			} catch(e) {
+				console.log(e);
+				$('.parseerror').fadeIn();
 			}
 		}
 	});
