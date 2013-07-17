@@ -1,7 +1,7 @@
-define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'models/database'], function($, _, Backbone, Marionette, app, DatabaseModel) {
+define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'models/collection'], function($, _, Backbone, Marionette, app, CollectionModel) {
 
 	var CollectionCollection = Backbone.Collection.extend({
-		model: DatabaseModel
+		model: CollectionModel
 	});
 
 	return CollectionCollection;

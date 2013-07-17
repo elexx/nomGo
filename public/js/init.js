@@ -6,7 +6,9 @@ require.config({
 		underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min',
 		backbone: '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min',
 		text: '//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.5/text',
-		marionette: '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/1.0.4-bundled/backbone.marionette.min'
+		marionette: '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/1.0.4-bundled/backbone.marionette.min',
+		codemirror: '//cdnjs.cloudflare.com/ajax/libs/codemirror/3.12.0/codemirror.min',
+		codemirrorjs: 'vendor/codemirror/javascript'
 	},
 	shim: {
 		backbone: {
@@ -17,8 +19,15 @@ require.config({
 			exports: '_'
 		},
 		marionette : {
-			deps : ['jquery', 'underscore', 'backbone'],
-			exports : 'Marionette'
+			deps: ['jquery', 'underscore', 'backbone'],
+			exports: 'Marionette'
+		},
+		codemirror: {
+			exports: 'CodeMirror'
+		},
+		codemirrorjs: {
+			deps: ['codemirror'],
+			exports: 'CodeMirror'
 		}
 	}
 });
