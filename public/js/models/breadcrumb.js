@@ -16,7 +16,12 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'app'], function($, _,
 		},
 
 		setData: function(data) {
-			this.set(data || this.defaults);
+			this.clear({ silent: true });
+			this.set({
+				database: data.database || this.defaults.database,
+				collection: data.collection || this.defaults.collection,
+				document: data.document || this.defaults.document
+			});
 		}
 	});
 
