@@ -1,10 +1,10 @@
-define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'views/databases', 'collections/databases', 'views/collections', 'collections/collections', 'views/documents', 'collections/documents', 'views/documentEdit', 'models/documentEdit'], function($, _, Backbone, Marionette, app, DatabaseListView, DatabaseList, CollectionListView, CollectionList, DocumentListView, DocumentList, DocumentEditView, DocumentModel) {
+define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'views/itemList', 'collections/itemList', 'views/documentEdit', 'models/documentEdit'], function($, _, Backbone, Marionette, app, ItemListView, ItemList, DocumentEditView, DocumentModel) {
 
 	var RoutingController = Marionette.Controller.extend({
 		listDatabases: function() {
 			app.vent.trigger('show:listDatabases');
-			app.mainRegion.show(new DatabaseListView({
-				collection: new DatabaseList([], { url: 'mongo/dbs' }),
+			app.mainRegion.show(new ItemListView({
+				collection: new ItemList([], { url: 'mongo/dbs' }),
 				baseUrl: ''
 			}));
 		},
@@ -12,8 +12,8 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'views/database
 		listCollections: function(database) {
 			app.vent.trigger('show:listCollections', { database: database });
 			database = encodeURIComponent(database);
-			app.mainRegion.show(new CollectionListView({
-				collection: new CollectionList([], { url: 'mongo/dbs/' + database }),
+			app.mainRegion.show(new ItemListView({
+				collection: new ItemList([], { url: 'mongo/dbs/' + database }),
 				baseUrl: '/' + database
 			}));
 		},
@@ -22,8 +22,8 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'views/database
 			app.vent.trigger('show:listDocuments', { database: database, collection: collection });
 			database = encodeURIComponent(database);
 			collection = encodeURIComponent(collection);
-			app.mainRegion.show(new DocumentListView({
-				collection: new DocumentList([], { url: 'mongo/dbs/' + database + '/' + collection }),
+			app.mainRegion.show(new ItemListView({
+				collection: new ItemList([], { url: 'mongo/dbs/' + database + '/' + collection }),
 				baseUrl: '/' + database + '/' + collection
 			}));
 		},
