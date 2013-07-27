@@ -11,7 +11,7 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'app', 'text!templates
 
 		viewDocumentContent: function(event) {
 			event.preventDefault();
-			app.appRouter.navigate(this.options.baseUrl + '/' + this.model.id, { trigger: true });
+			app.appRouter.navigate(this.options.baseUrl + '/' + encodeURIComponent(this.model.id), { trigger: true });
 		},
 
 		deleteDocument: function(event) {
