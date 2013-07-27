@@ -35,10 +35,10 @@
 			mongoController.getCollectionList(req.params.database, function(d) { res.json(d); });
 		});
 		app.post('/mongo/dbs', function(req, res) {
-			console.log('new database [%s]', req.body.name);
+			console.log('new database [%s] - not yet implemented', req.body.name);
 		});
 		app.delete('/mongo/dbs/:database', function(req, res) {
-			console.log('delete database [%s]', req.params.database);
+			console.log('delete database [%s] - not yet implemented', req.params.database);
 		});
 
 		/** COLLECTIONS **/
