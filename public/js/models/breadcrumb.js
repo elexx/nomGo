@@ -17,6 +17,7 @@ define(['jquery', 'underscore', 'backbone', 'marionette', 'app'], function($, _,
 
 		setData: function(data) {
 			this.clear({ silent: true });
+			data = data || this.defaults;
 			this.set({
 				database: data.database || this.defaults.database,
 				collection: data.collection || this.defaults.collection,
