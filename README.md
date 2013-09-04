@@ -29,3 +29,7 @@ nomGo's backend is build on top of nodejs as a rest services. It uses [expressjs
 nomGo's frontend is a [SPA](http://en.wikipedia.org/wiki/Single-page_application). It uses [requirejs](http://requirejs.org/) as module loader, [backbonejs](http://backbonejs.org/) as router with [underscorejs](http://underscorejs.org/) as templating engine and [jQuery](http://jquery.com/) for DOM manipulation and [marionettejs](http://marionettejs.com/) to simplify my life.
 
 nomGo's frontend libraries are hosted on [cdnjs](http://cdnjs.com/)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/elexx/nomgo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
